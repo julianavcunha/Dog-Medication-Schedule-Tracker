@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- SECTION: Head -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tabela de Medicações</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app gradient-mesh grain">
+      <!-- Decorative background shapes -->
+      <div class="floating-shape shape-1" aria-hidden="true"></div>
+      <div class="floating-shape shape-2" aria-hidden="true"></div>
+
+      <main class="shell" aria-labelledby="page-title">
+        <!-- SECTION: Header -->
+        <header class="header">
+          <div class="header__title-group">
+            <h1 id="page-title">Tabela de Medicações</h1>
+          </div>
+
+          <section class="dog-card" aria-label="Dog details">
+            <div class="dog-card__info">
+              <h2 class="dog-card__name">Chiquinha</h2>
+              <p class="dog-card__details">Peso: 10 kg • Idade: 10 anos</p>
+            </div>
+            <div class="dog-card__meta">
+              <p class="dog-card__label">Hoje</p>
+              <p class="dog-card__date" id="today-date"></p>
+            </div>
+          </section>
+        </header>
+
+        <!-- SECTION: Controls -->
+        <section class="controls" aria-label="Tracking controls">
+          <div class="controls__group">
+            <label for="view-select">Ver programação para:</label>
+            <select id="view-select" class="select">
+              <option value="today">Hoje</option>
+              <option value="all" selected>Programação completa</option>
+            </select>
+          </div>
+
+          <button type="button" class="button button--ghost" id="clear-today">
+            Selecionar todas as medicações
+          </button>
+        </section>
+
+        <!-- SECTION: Medications table -->
+        <section class="table-card" aria-label="Medication schedule">
+          <header class="table-card__header">
+            <div>
+              <h2 class="table-card__title">Tabela de medicações</h2>
+              <p class="table-card__subtitle" id="view-description">
+                Exibindo as doses de <strong>hoje</strong>. Clique nos quadrados
+                à direita após administrar a medicação.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="button button--ghost"
+              id="print-schedule"
+            >
+              Imprimir programação completa
+            </button>
+          </header>
+
+          <div
+            class="table-wrapper"
+            role="region"
+            aria-label="Medication chart"
+            tabindex="0"
+          >
+            <table class="med-table" id="med-table">
+              <thead>
+                <tr>
+                  <th scope="col">Dia</th>
+                  <th scope="col">Medicação</th>
+                  <th scope="col">Posologia</th>
+                  <th scope="col">Frequência</th>
+                  <th scope="col">Duração do Tratamento</th>
+                  <th scope="col" id="doses-header">Doses de hoje</th>
+                </tr>
+              </thead>
+              <tbody id="med-table-body">
+                <!-- As linhas da tabela serão geradas via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
